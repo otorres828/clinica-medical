@@ -22,3 +22,7 @@ Para desarrollar esta página se utilizaron las siguientes tecnologías:
 ## Autor
 
 Esta página fue desarrollada por Oliver Torres. Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto conmigo a través de mi correo electrónico: olivertorres1997@gmail.com.
+
+## Repositorio
+[clinica medical](https://github.com/otorres828/clinica-medical/).
+
