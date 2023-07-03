@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Paciente</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/general.css">
+        <link rel="stylesheet" href="./css/footer.css">
+        <link rel="stylesheet" href="./css/table.css">
+        <link rel="stylesheet" href="./css/formulario.css">
+        <link rel="stylesheet" href="./css/login.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&family=Roboto+Mono:ital,wght@0,100;0,500;1,100;1,200&family=Roboto+Slab&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
+        <!-- CABECERA -->
+        <header id="inicio" style="z-index: 3;">
+            <!-- NABVAR -->
+            <div class="header-left">
+                <div class="logo">
+                    <img src="./assets/logo.png" alt="">
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="index.html" class="active">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="index.html#nosotros">Nosotros</a>
+                        </li>
+                        <li>
+                            <a href="#servicios">Servicios</a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#preguntas">Preguntas Frecuentes</a>
+                        </li>
+
+                    </ul>
+                    <div class="login">
+                        <a href="index.html#iniciar-sesion">Cerrar Sesion</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="header-right">
+                <div class="login">
+                    <a href="index.html#iniciar-sesion">Cerrar Sesion</a>
+                </div>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <!-- PORTADA -->
+            <div class="cabecera"
+                style="background-image:url('./assets/portada.png');z-index:1;">
+                <div class="overlay">
+                    <div class="contenido">
+                        <h2 class="texto-portada">Bienvenido/a,</h2><h2
+                            id="usuario"></h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contenedor">
+                <h2 id="servicios" style="margin-top: 25px;" class="texto-titulo listado">Listado de Turnos</h2>
+                <section id="consulta" class="grid-container-2" style="margin-top: 25px;">
+                    <!-- FORMULARIO -->
+                    <h2 class="texto-titulo registrar">Registrar Turno</h2>
+                    <form id="formulario-turnos"  style="width: 100%;">
+                        <div class="form-group">
+                            <label for="especialidad">Especialidad:</label>
+                            <select class="form-control" id="especialidad"
+                                name="especialidad" required>
+                                <option value="">Seleccione una especialidad</option>
+                                <option value="cardiologia">Cardiología</option>
+                                <option value="dermatologia">Dermatología</option>
+                                <option value="ginecologia">Ginecología</option>
+                                <option value="odontologia">Odontología</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="medico">Médico:</label>
+                            <select class="form-control" id="medico"
+                                name="medico" required>
+                                <option value="">Seleccione un médico</option>
+                                <option value="perez">Dr. Pérez</option>
+                                <option value="gonzalez">Dra. González</option>
+                                <option value="rodriguez">Dr. Rodríguez</option>
+                                <option value="lopez">Dra. López</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha:</label>
+                            <input type="date" class="form-control"
+                                id="fecha" name="fecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hora">Hora:</label>
+                            <input type="time" class="form-control"
+                                id="hora" name="hora" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email del paciente:</label>
+                            <input type="email" class="form-control"
+                                id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="observaciones">Observaciones:</label>
+                            <textarea class="form-control"
+                                id="observaciones" name="observaciones"
+                                rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">Reservar Turno</button>
+                    </form>
+                    <!-- LISTADO DE TURNOS -->
+                    <h2 class="texto-titulo registrar">Listado de Turnos</h2>
+                    <div  class="responsive">
+                        <table  id="tabla-turnos" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Especialidad</th>
+                                    <th>Médico</th>
+                                    <th>Observaciones</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="fila-1">
+                                    <td>10/07/2023</td>
+                                    <td>11:00</td>
+                                    <td>Cardiología</td>
+                                    <td>Dr. Pérez</td>
+                                    <td>Revisión anual</td>
+                                    <td><button onclick="cancelar(1)" class="btn-red">Cancelar</button></td>
+                                </tr>
+                                <tr id="fila-2">
+                                    <td>15/07/2023</td>
+                                    <td>14:30</td>
+                                    <td>Odontología</td>
+                                    <td>Dra. Gómez</td>
+                                    <td>Limpieza dental</td>
+                                    <td><button onclick="cancelar(2)" class="btn-red">Cancelar</button></td>
+                                </tr>
+                                <tr id="fila-3">
+                                    <td>20/07/2023</td>
+                                    <td>09:00</td>
+                                    <td>Oftalmología</td>
+                                    <td>Dr. Rodríguez</td>
+                                    <td>Control de la vista</td>
+                                    <td><button onclick="cancelar(3)" class="btn-red">Cancelar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- PIE DE PAGINA -->
+        <footer style="margin-top: 60px;">
+            <div class="pie-pagina">
+                <div class="columna-1">
+                    <p>Derechos de autor ©otorres828 2023 -
+                        Todos
+                        los derechos
+                        reservados.</p>
+                </div>
+
+                <div class="columna-2">
+                    <h3>Datos del Autor</h3>
+                    <ul>
+                        <li><a href="htpps://wa.me/584249281245">Nombre: Oliver
+                                Torres</a></li>
+                        <li><a href="htpps://wa.me/584249281245">Pais: Venezuela</a></li>
+                        <li><a href="htpps://wa.me/584249281245">NºIdentificacion:
+                                V26269828</a></li>
+                        <li><a href="#">Profesor: Matias Garcia</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JS -->
+        <script src="./js/paciente.js"></script>
+        <!-- CDN SWEET ALERT2 -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </body>
+</html>

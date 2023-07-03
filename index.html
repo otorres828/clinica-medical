@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clinica  Hispana
+            Pro-Salud</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/general.css">
+        <link rel="stylesheet" href="./css/login.css">
+        <link rel="stylesheet" href="./css/footer.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&family=Roboto+Mono:ital,wght@0,100;0,500;1,100;1,200&family=Roboto+Slab&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
+        <!-- CABECERA -->
+        <header style="z-index: 3;">
+            <!-- NABVAR -->
+            <div class="header-left">
+                <div class="logo">
+                    <img src="./assets/logo.png" alt="">
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="index.html" class="active">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#nosotros">Nosotros</a>
+                        </li>
+                        <li>
+                            <a href="#servicios">Servicios</a>
+                        </li>
+        
+                        <li>
+                            <a href="#preguntas">Preguntas Frecuentes</a>
+                        </li>
+
+                    </ul>
+                    <div class="login">
+                        <a href="#iniciar-sesion">Iniciar Sesion</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="header-right">
+                <div class="login">
+                    <a href="#iniciar-sesion">Iniciar Sesion</a>
+                </div>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <!-- PORTADA -->
+            <div class="cabecera"
+                style="background-image:url('./assets/portada.png');z-index:1;">
+                <div class="overlay">
+                    <div class="contenido">
+                        <h1><p class="texto-portada">Clínica</p> Hispana
+                            Pro-Salud</h1>
+                        <p>Brindamos Asistencia Integral a toda la Familia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contenedor" style="margin-top: 5rem;">
+                <!-- QUIENES SOMOS -->
+                <section id="nosotros" class="grid-container-2">
+                    <div>
+                        <img class="rounded-5" src="./assets/quienes_somos.png"
+                            alt="quienes_somos">
+                    </div>
+                    <div class="contenido-seccion">
+                        <h2 class="texto-secciones">¿Quiénes somos?</h2>
+                        <p class="parrafo-secciones">Somos un equipo de salud
+                            multidisciplinario, altamente calificado para
+                            atender a todos los pacientes y sus necesidades
+                            médicas. Nuestra clínica está enfocada en su
+                            bienestar y máxima satisfacción. El equipo ProSalud
+                            está en constante actualización para atender las
+                            necesidades y requerimientos de la salud de nuestros
+                            pacientes.</p>
+                    </div>
+                </section>
+                <br><br><br>
+
+                <!-- SERVICIOS -->
+                <h2 id="servicios" class="texto-titulo">Servicios</h2>
+                <section class="grid-container" style="margin-top: 30px;">
+                    <article>
+                        <a href="servicios.html#consulta">
+                            <div class="card">
+                                <img src="./assets/consulta_medica.jpg"
+                                    alt="Consulta Medica" title="Consulta
+                                    Medica">
+                                <div class="texto-oculto">
+                                    <p class="card-texto">Consulta Medica</p>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="servicios.html#laboratorio">
+                            <div class="card">
+                                <img src="./assets/laboratorio.jpg"
+                                    alt="Laboratorio">
+                                <div class="texto-oculto">
+                                    <p class="card-texto">Laboratorio</p>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="servicios.html#procedimientos">
+                            <div class="card">
+                                <img src="./assets/procedimientos.png"
+                                    alt="Procedimientos">
+                                <div class="texto-oculto">
+                                    <p class="card-texto">Procedimientos</p>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </section>
+                <section class="grid-container-2" style="justify-items:center; margin-top: 3rem;">
+                    <article>
+                        <a href="servicios.html#clinical">
+                            <div class="card">
+                                <img src="./assets/clinical.jpg" alt="Clinical
+                                    Test">
+                                <div class="texto-oculto">
+                                    <p class="card-texto">Clinical Test</p>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="servicios.html#atendemos">
+                            <div class="card">
+                                <img src="./assets/atendemos.jpg"
+                                    alt="atendemos">
+                                <div class="texto-oculto">
+                                    <p class="card-texto">Atendemos el control:</p>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </section>
+
+                <!-- PREGUNTAS FRECUENTES -->
+                <h1 id="preguntas" style="margin-top: 20px; margin-bottom:
+                    20px;" class="texto-titulo">Preguntas Frecuentes</h1>
+                <div>
+                    <details>
+                        <summary>¿Cual es el horario</summary>
+                        <p> Lunes a Viernes 9 am – 7pm Sabados 9am- 6pm Domingo
+                            9am-3pm </p>
+                    </details>
+                    <details>
+                        <summary>¿Como puedo contactarlos?</summary>
+                        <p>
+                            707 Sunset St , Denton, TX 76201</p>
+                        <p> info@clinicaprosaluddfw.com</p>
+                        <p>940-514-1005
+
+                        </p>
+                    </details>
+                    <details>
+                        <summary>¿Que clase de especialistas hay?</summary>
+                        <p>la clinica cuenta con especialistas de tipo:Médicos generales o de familia
+                            Pediatras
+                            Cardiólogos
+                            Neurólogos
+                            Ginecólogos
+                            Dermatólogos
+                            Oftalmólogos
+                            Endocrinólogos
+                            Oncólogos
+                            Psiquiatras
+                            Psicólogos clínicos
+                            Fisioterapeutas
+                            Nutricionistas
+                            Terapeutas del habla
+                            Odontólogos
+                            Enfermeros y enfermeras.</p>
+                    </details>
+                </div>
+                <hr style="margin-top: 30px;">
+
+                <!-- LOGIN -->
+                <h2 class="texto-titulo" style="margin-top: 30px;" id="iniciar-sesion">INICIA SESION</h2>
+                <form id="login">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" class="form-input" id="usuario" required>
+                    <label for="clave">Clave</label>
+                    <input type="password" id="clave" class="form-input" required>
+                    <button type="submit" style="margin-top: 15px;" class="btn-primary w-full">Iniciar Sesion</button>
+                </form>
+            </div>
+        </main>
+        
+        <!-- PIE DE PAGINA -->
+        <footer style="margin-top: 60px;">
+            <div class="pie-pagina">
+                <div class="columna-1">
+                    <p>Derechos de autor ©otorres828 2023 -
+                        Todos
+                        los derechos
+                        reservados.</p>
+                </div>
+
+                <div class="columna-2">
+                    <h3>Datos del Autor</h3>
+                    <ul>
+                        <li><a href="htpps://wa.me/584249281245">Nombre: Oliver
+                                Torres</a></li>
+                        <li><a href="htpps://wa.me/584249281245">Pais: Venezuela</a></li>
+                        <li><a href="htpps://wa.me/584249281245">NºIdentificacion:
+                                V26269828</a></li>
+                        <li><a href="#">Profesor: Matias Garcia</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JS -->
+        <script src="./js/index.js"></script>
+        <!-- CDN SWEET ALERT2 -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    </body>
+</html>

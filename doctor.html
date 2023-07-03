@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Doctor</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/footer.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&family=Roboto+Mono:ital,wght@0,100;0,500;1,100;1,200&family=Roboto+Slab&display=swap"
+            rel="stylesheet">
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+
+    </head>
+    <body>
+        <!-- CABECERA -->
+        <header id="inicio" style="z-index: 3;">
+            <!-- NABVAR -->
+            <div class="header-left">
+                <div class="logo">
+                    <img src="./assets/logo.png" alt="">
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="index.html" class="active">Inicio</a>
+                        </li>
+
+
+                    </ul>
+                    <div class="login">
+                        <a href="index.html#iniciar-sesion">Cerrar Sesion</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="header-right">
+                <div class="login">
+                    <a href="index.html#iniciar-sesion">Cerrar Sesion</a>
+                </div>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <!-- PORTADA -->
+            <div class="cabecera"
+                style="background-image:url('./assets/portada.png');z-index:1;">
+                <div class="overlay">
+                    <div class="contenido">
+                        <h2 class="texto-portada">Bienvenido/a,</h2><h2
+                            id="usuario"></h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TURNOS -->
+            <h2 class="text-5xl text-gray-600 font-semibold mt-5 ml-10 mb-3">Selecione
+                el dia de la semana</h2>
+            <div class="container mx-auto">
+
+                <select class="appearance-none bg-blue-400 border-2 border-black
+                    text-white py-2 px-4 rounded-l text-2xl mb-4  ml-10"
+                    onchange="filtrar_por_turno()" id="select_dia">
+                    <option value="0" selected>Todos los turnos...</option>
+                    <option value="1">Lunes</option>
+                    <option value="2">Martes</option>
+                    <option value="3">Miercoles</option>
+                    <option value="4">Jueves</option>
+                    <option value="5">Viernes</option>
+                </select>
+
+                <h2 id="dia-semana" class="text-5xl text-gray-600 font-semibold
+                    dia_nombre
+                    m-5">Lunes</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2
+                    lg:grid-cols-3 gap-6 pb-6">
+
+                    <div data-dia="1" class="pt-4 grid-cols-2 shadow mt-5
+                        turno_select
+                        text-sm relative
+                        max-w-64 border-0 rounded-lg text-gray-800
+                        flex flex-col"
+                        style="background-color:white;">
+                        <div class="py-0 z-10 mx-6 -mt-8 rounded-lg relative">
+                            <div
+                                class="block bg-transparente m-0 p-0
+                                relative">
+                                <img class="rounded-lg shadow object-contain"
+                                    src="./assets/paciente1.jpg"
+                                    alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class=" mt-0 px-6 flex flex-wrap items-baseline ">
+                            <h4 class="mt-2 flex w-full text-lg leading-tight
+                                text-gray-700 hover:text-blue-800 font-bold
+                                font-serif ">
+                                Juan Carlos - 28 años
+                            </h4>
+                            <div
+                                class="mt-2 p-1 w-auto rounded text-xs shadow-lg
+                                uppercase font-serif text-white bg-green-800">
+                                <button type="button" class="text-1xl p-1">8:00am</button>
+                            </div>
+                        </div>
+
+                        <div class="py-2 px-6 ">
+                            <div class="flex-grow items-center justify-between
+                                ">
+                                <h1 class="mb-3 text-gray-600 ">
+                                    Paciente con alergias alimentarias</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-dia="1" class="pt-4 grid-cols-2 shadow mt-5
+                        turno_select
+                        text-sm relative
+                        max-w-64 border-0 rounded-lg text-gray-800
+                        flex flex-col"
+                        style="background-color:white;">
+                        <div class="py-0 z-10 mx-6 -mt-8 rounded-lg relative">
+                            <div
+                                class="block bg-transparente m-0 p-0
+                                relative">
+                                <img class="rounded-lg shadow object-contain"
+                                    src="./assets/paciente2.jpg"
+                                    alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class=" mt-0 px-6 flex flex-wrap items-baseline ">
+                            <h4 class="mt-2 flex w-full text-lg leading-tight
+                                text-gray-700 hover:text-blue-800 font-bold
+                                font-serif ">
+                                María Rodríguez - 29 años
+                            </h4>
+                            <div
+                                class="mt-2 p-1 w-auto rounded text-xs shadow-lg
+                                uppercase font-serif text-white bg-green-800">
+                                <button type="button" class="text-1xl p-1">9:00am</button>
+                            </div>
+                        </div>
+
+                        <div class="py-2 px-6 ">
+                            <div class="flex-grow items-center justify-between">
+                                <h1 class="mb-3 text-gray-600 ">
+                                    Paciente con dolor de cabeza persistente.</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-dia="1" class="pt-4 grid-cols-2 shadow mt-5
+                        turno_select
+                        text-sm relative
+                        max-w-64 border-0 rounded-lg text-gray-800
+                        flex flex-col"
+                        style="background-color:white;">
+                        <div class="py-0 z-10 mx-6 -mt-8 rounded-lg relative">
+                            <div
+                                class="block bg-transparente m-0 p-0
+                                relative">
+                                <img class="rounded-lg shadow object-contain"
+                                    src="./assets/paciente3.jpg"
+                                    alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class=" mt-0 px-6 flex flex-wrap items-baseline ">
+                            <h4 class="mt-2 flex w-full text-lg leading-tight
+                                text-gray-700 hover:text-blue-800 font-bold
+                                font-serif ">
+                                Ana Montero - 28 años
+                            </h4>
+                            <div
+                                class="mt-2 p-1 w-auto rounded text-xs shadow-lg
+                                uppercase font-serif text-white bg-green-800">
+                                <button type="button" class="text-1xl p-1">10:00am</button>
+                            </div>
+                        </div>
+
+                        <div class="py-2 px-6 ">
+                            <div class="flex-grow items-center justify-between">
+                                <h1 class="mb-3 text-gray-600 ">
+                                    Paciente con problemas de ansiedad.
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-5xl text-gray-600 font-semibold dia_nombre
+                    m-5">Martes</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2
+                    lg:grid-cols-3 gap-6 pb-6">
+
+                    <div data-dia="2" class="pt-4 grid-cols-2 shadow mt-5
+                        turno_select
+                        text-sm relative
+                        max-w-64 border-0 rounded-lg text-gray-800
+                        flex flex-col"
+                        style="background-color:white;">
+                        <div class="py-0 z-10 mx-6 -mt-8 rounded-lg relative">
+                            <div
+                                class="block bg-transparente m-0 p-0
+                                relative">
+                                <img class="rounded-lg shadow"
+                                    src="./assets/paciente4.jpg"
+                                    alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class=" mt-0 px-6 flex flex-wrap items-baseline ">
+                            <h4 class="mt-2 flex w-full text-lg leading-tight
+                                text-gray-700 hover:text-blue-800 font-bold
+                                font-serif ">
+                                Luisa Garcia - 32 años
+                            </h4>
+                            <div
+                                class="mt-2 p-1 w-auto rounded text-xs shadow-lg
+                                uppercase font-serif text-white bg-green-800">
+                                <button type="button" class="text-1xl p-1">9:00am</button>
+                            </div>
+                        </div>
+
+                        <div class="py-2 px-6 ">
+                            <div class="flex-grow items-center justify-between
+                                ">
+                                <h1 class="mb-3 text-gray-600 ">
+                                    Paciente con diabetes tipo 2.</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-dia="2" class="pt-4 grid-cols-2 shadow mt-5
+                        turno_select
+                        text-sm relative
+                        max-w-64 border-0 rounded-lg text-gray-800
+                        flex flex-col"
+                        style="background-color:white;">
+                        <div class="py-0 z-10 mx-6 -mt-8 rounded-lg relative">
+                            <div
+                                class="block bg-transparente m-0 p-0
+                                relative">
+                                <img class="rounded-lg shadow"
+                                    src="./assets/paciente5.jpg"
+                                    alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class=" mt-0 px-6 flex flex-wrap items-baseline ">
+                            <h4 class="mt-2 flex w-full text-lg leading-tight
+                                text-gray-700 hover:text-blue-800 font-bold
+                                font-serif ">
+                                Paolo Suarez - 22 años
+                            </h4>
+                            <div
+                                class="mt-2 p-1 w-auto rounded text-xs shadow-lg
+                                uppercase font-serif text-white bg-green-800">
+                                <button type="button" class="text-1xl p-1">11:00am</button>
+                            </div>
+                        </div>
+
+                        <div class="py-2 px-6 ">
+                            <div class="flex-grow items-center justify-between
+                                ">
+                                <h1 class="mb-3 text-gray-600 ">
+                                    Paciente con problemas de acné.</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-5xl text-gray-600 font-semibold dia_nombre
+                    m-5">Miercoles</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2
+                    lg:grid-cols-3 gap-6 pb-6">
+                    <!-- TURNO 6 -->
+                    <div data-dia="3" class="pt-4 grid-cols-2 shadow mt-5
+                        turno_select
+                        text-sm relative
+                        max-w-64 border-0 rounded-lg text-gray-800
+                        flex flex-col"
+                        style="background-color:white;">
+                        <div class="py-0 z-10 mx-6 -mt-8 rounded-lg relative">
+                            <div
+                                class="block bg-transparente m-0 p-0
+                                relative">
+                                <img class="rounded-lg shadow"
+                                    src="./assets/paciente6.jpg"
+                                    alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class=" mt-0 px-6 flex flex-wrap items-baseline ">
+                            <h4 class="mt-2 flex w-full text-lg leading-tight
+                                text-gray-700 hover:text-blue-800 font-bold
+                                font-serif ">
+                                Juan Carlos - 21 años
+                            </h4>
+                            <div
+                                class="mt-2 p-1 w-auto rounded text-xs shadow-lg
+                                uppercase font-serif text-white bg-green-800">
+                                <button type="button" class="text-1xl p-1">9:00am</button>
+                            </div>
+                        </div>
+
+                        <div class="py-2 px-6 ">
+                            <div class="flex-grow items-center justify-between
+                                ">
+                                <h1 class="mb-3 text-gray-600 ">
+                                    Paciente con alergias alimentarias</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-5xl text-gray-600 font-semibold dia_nombre
+                    m-5">Jueves</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2
+                    lg:grid-cols-3 gap-6 pb-6">
+
+                    <div data-dia="4" class="pt-4 grid-cols-2 shadow mt-5
+                        turno_select
+                        text-sm relative
+                        max-w-64 border-0 rounded-lg text-gray-800
+                        flex flex-col"
+                        style="background-color:white;">
+                        <div class="py-0 z-10 mx-6 -mt-8 rounded-lg relative">
+                            <div
+                                class="block bg-transparente m-0 p-0
+                                relative">
+                                <img class="rounded-lg shadow"
+                                    src="./assets/paciente7.jpg"
+                                    alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class=" mt-0 px-6 flex flex-wrap items-baseline ">
+                            <h4 class="mt-2 flex w-full text-lg leading-tight
+                                text-gray-700 hover:text-blue-800 font-bold
+                                font-serif ">
+                                Lucía González - 23 años
+                            </h4>
+                            <div
+                                class="mt-2 p-1 w-auto rounded text-xs shadow-lg
+                                uppercase font-serif text-white bg-green-800">
+                                <button type="button" class="text-1xl p-1">10:00am</button>
+                            </div>
+                        </div>
+
+                        <div class="py-2 px-6 ">
+                            <div class="flex-grow items-center justify-between
+                                ">
+                                <h1 class="mb-3 text-gray-600 ">
+                                    Paciente con problemas de dermatitis.</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-dia="4" class="pt-4 grid-cols-2 shadow mt-5
+                        turno_select
+                        text-sm relative
+                        max-w-64 border-0 rounded-lg text-gray-800
+                        flex flex-col"
+                        style="background-color:white;">
+                        <div class="py-0 z-10 mx-6 -mt-8 rounded-lg relative">
+                            <div
+                                class="block bg-transparente m-0 p-0
+                                relative">
+                                <img class="rounded-lg shadow"
+                                    src="./assets/paciente8.jpg"
+                                    alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class=" mt-0 px-6 flex flex-wrap items-baseline ">
+                            <h4 class="mt-2 flex w-full text-lg leading-tight
+                                text-gray-700 hover:text-blue-800 font-bold
+                                font-serif ">
+                                Pablo Ruiz - 20 años
+                            </h4>
+                            <div
+                                class="mt-2 p-1 w-auto rounded text-xs shadow-lg
+                                uppercase font-serif text-white bg-green-800">
+                                <button type="button" class="text-1xl p-1">11:00pm</button>
+                            </div>
+                        </div>
+
+                        <div class="py-2 px-6 ">
+                            <div class="flex-grow items-center justify-between
+                                ">
+                                <h1 class="mb-3 text-gray-600 ">
+                                    Paciente con paralisis del sueño.</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-5xl text-gray-600 font-semibold dia_nombre
+                    m-5">Viernes</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2
+                    lg:grid-cols-3 gap-6 pb-6">
+
+                    <div data-dia="5" class="pt-4 grid-cols-2 shadow mt-5
+                        turno_select
+                        text-sm relative
+                        max-w-64 border-0 rounded-lg text-gray-800
+                        flex flex-col"
+                        style="background-color:white;">
+                        <div class="py-0 z-10 mx-6 -mt-8 rounded-lg relative">
+                            <div
+                                class="block bg-transparente m-0 p-0
+                                relative">
+                                <img class="rounded-lg shadow"
+                                    src="./assets/paciente9.jpg"
+                                    alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class=" mt-0 px-6 flex flex-wrap items-baseline ">
+                            <h4 class="mt-2 flex w-full text-lg leading-tight
+                                text-gray-700 hover:text-blue-800 font-bold
+                                font-serif ">
+                                Sergio Ramos -18 años
+                            </h4>
+                            <div
+                                class="mt-2 p-1 w-auto rounded text-xs shadow-lg
+                                uppercase font-serif text-white bg-green-800">
+                                <button type="button" class="text-1xl p-1">7:00am</button>
+                            </div>
+                        </div>
+
+                        <div class="py-2 px-6 ">
+                            <div class="flex-grow items-center justify-between
+                                ">
+                                <h1 class="mb-3 text-gray-600 ">
+                                    Paciente con anorexia.</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-dia="5" class="pt-4 grid-cols-2 shadow mt-5
+                        turno_select
+                        text-sm relative
+                        max-w-64 border-0 rounded-lg text-gray-800
+                        flex flex-col"
+                        style="background-color:white;">
+                        <div class="py-0 z-10 mx-6 -mt-8 rounded-lg relative">
+                            <div
+                                class="block bg-transparente m-0 p-0
+                                relative">
+                                <img class="rounded-lg shadow"
+                                    src="./assets/paciente10.jpg"
+                                    alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class=" mt-0 px-6 flex flex-wrap items-baseline ">
+                            <h4 class="mt-2 flex w-full text-lg leading-tight
+                                text-gray-700 hover:text-blue-800 font-bold
+                                font-serif ">
+                                Alexandra Monagas - 25 años
+                            </h4>
+                            <div
+                                class="mt-2 p-1 w-auto rounded text-xs shadow-lg
+                                uppercase font-serif text-white bg-green-800">
+                                <button type="button" class="text-1xl p-1">8:00pm</button>
+                            </div>
+                        </div>
+
+                        <div class="py-2 px-6 ">
+                            <div class="flex-grow items-center justify-between
+                                ">
+                                <h1 class="mb-3 text-gray-600 ">
+                                    Paciente con fractura en la servical.</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-dia="5" class="pt-4 grid-cols-2 shadow mt-5
+                        turno_select
+                        text-sm relative
+                        max-w-64 border-0 rounded-lg text-gray-800
+                        flex flex-col"
+                        style="background-color:white;">
+                        <div class="py-0 z-10 mx-6 -mt-8 rounded-lg relative">
+                            <div
+                                class="block bg-transparente m-0 p-0
+                                relative">
+                                <img class="rounded-lg shadow"
+                                    src="./assets/paciente11.jpg"
+                                    alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class=" mt-0 px-6 flex flex-wrap items-baseline ">
+                            <h4 class="mt-2 flex w-full text-lg leading-tight
+                                text-gray-700 hover:text-blue-800 font-bold
+                                font-serif ">
+                                Alejandra Bello - 21 años
+                            </h4>
+                            <div
+                                class="mt-2 p-1 w-auto rounded text-xs shadow-lg
+                                uppercase font-serif text-white bg-green-800">
+                                <button type="button" class="text-1xl p-1">9:00am</button>
+                            </div>
+                        </div>
+
+                        <div class="py-2 px-6 ">
+                            <div class="flex-grow items-center justify-between
+                                ">
+                                <h1 class="mb-3 text-gray-600 ">
+                                    Paciente con dolor de espalda.</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- PIE DE PAGINA -->
+        <footer style="margin-top: 60px;">
+            <div class="pie-pagina">
+                <div class="columna-1">
+                    <p>Derechos de autor ©otorres828 2023 -
+                        Todos
+                        los derechos
+                        reservados.</p>
+                </div>
+
+                <div class="columna-2">
+                    <h3>Datos del Autor</h3>
+                    <ul>
+                        <li><a href="htpps://wa.me/584249281245">Nombre: Oliver
+                                Torres</a></li>
+                        <li><a href="htpps://wa.me/584249281245">Pais: Venezuela</a></li>
+                        <li><a href="htpps://wa.me/584249281245">NºIdentificacion:
+                                V26269828</a></li>
+                        <li><a href="#">Profesor: Matias Garcia</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JS -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="./js/doctor.js"></script>
+        <!-- CDN SWEET ALERT2 -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+    </body>
+</html>
